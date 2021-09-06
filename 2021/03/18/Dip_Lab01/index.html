@@ -5,18 +5,37 @@
   
 
   
-  <title>pass by的编程时光</title>
+  <title>图像的基本操作 | pass by的编程时光</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="pass by的编程时光">
-<meta property="og:url" content="http://arhathandong.github.io/index.html">
+  <meta name="description" content="这是第一次用matlab做数字图像处理实验，话不多说，直接上实验。 题目：1、读入一幅RGB图像，变换为灰度图像和二值图像，并在同一个窗口内分别显示RGB图像和灰度图像，注上文字标题,并将结果以文件形式存到磁盘上。2、对图像执行放大、缩小及旋转操作，分别采用最近邻插值、双线性插值及双三次插值方法实现，要求根据算法自己编写代码实现，并分析三种方法的优缺点。 下面将实验分为6个小实验： 一、读入一幅R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图像的基本操作">
+<meta property="og:url" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/index.html">
 <meta property="og:site_name" content="pass by的编程时光">
+<meta property="og:description" content="这是第一次用matlab做数字图像处理实验，话不多说，直接上实验。 题目：1、读入一幅RGB图像，变换为灰度图像和二值图像，并在同一个窗口内分别显示RGB图像和灰度图像，注上文字标题,并将结果以文件形式存到磁盘上。2、对图像执行放大、缩小及旋转操作，分别采用最近邻插值、双线性插值及双三次插值方法实现，要求根据算法自己编写代码实现，并分析三种方法的优缺点。 下面将实验分为6个小实验： 一、读入一幅R">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C1.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C2.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C3.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C4.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C5.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C6.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C7.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C8.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C9.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C10.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C11.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C12.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C13.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C14.png">
+<meta property="article:published_time" content="2021-03-18T03:18:48.786Z">
+<meta property="article:modified_time" content="2021-09-06T03:13:18.630Z">
 <meta property="article:author" content="pass by">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C1.png">
   
     <link rel="alternate" href="/atom.xml" title="pass by的编程时光" type="application/atom+xml">
   
@@ -57,15 +76,13 @@
   </div>
 </header>
       <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main">
-  
-    <article id="post-Dip_Lab01" class="article global-container article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Dip_Lab01" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/18/Dip_Lab01/">图像的基本操作</a>
+    <h1 class="article-title" itemprop="name">
+      图像的基本操作
     </h1>
   
 
@@ -78,6 +95,10 @@
     
     
   </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
   
 
   <div class="article-inner">
@@ -112,63 +133,47 @@
       
     </div>
     
+      <footer class="article-footer">
+        完
+      </footer>
+    
   </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2021/03/09/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Hello World</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    <link rel="stylesheet" href="/css/gitment.css"> 
+<script src="/js/gitment.js"></script>
+
+<div id="gitmentContainer"></div>
+
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
   
   
 </article>
-
-  
-    <article id="post-hello-world" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/09/hello-world/">Hello World</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2021/03/09/hello-world/" class="article-date">
-  <time datetime="2021-03-09T08:56:56.889Z" itemprop="datePublished">2021-03-09</time>
-</a>
-    
-    
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-
-
-
 </section>
         <aside id="sidebar">
   
