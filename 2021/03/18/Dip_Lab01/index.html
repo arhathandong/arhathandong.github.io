@@ -13,31 +13,31 @@
   <meta name="description" content="这是第一次用matlab做数字图像处理实验，话不多说，直接上实验。 题目：1、读入一幅RGB图像，变换为灰度图像和二值图像，并在同一个窗口内分别显示RGB图像和灰度图像，注上文字标题,并将结果以文件形式存到磁盘上。2、对图像执行放大、缩小及旋转操作，分别采用最近邻插值、双线性插值及双三次插值方法实现，要求根据算法自己编写代码实现，并分析三种方法的优缺点。 下面将实验分为6个小实验： 一、读入一幅R">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图像的基本操作">
-<meta property="og:url" content="http://arhathandong.github.io/blog/2021/03/18/Dip_Lab01/index.html">
+<meta property="og:url" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/index.html">
 <meta property="og:site_name" content="pass by的编程时光">
 <meta property="og:description" content="这是第一次用matlab做数字图像处理实验，话不多说，直接上实验。 题目：1、读入一幅RGB图像，变换为灰度图像和二值图像，并在同一个窗口内分别显示RGB图像和灰度图像，注上文字标题,并将结果以文件形式存到磁盘上。2、对图像执行放大、缩小及旋转操作，分别采用最近邻插值、双线性插值及双三次插值方法实现，要求根据算法自己编写代码实现，并分析三种方法的优缺点。 下面将实验分为6个小实验： 一、读入一幅R">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://arhathandong.github.io/blog/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C1.png">
-<meta property="og:image" content="http://arhathandong.github.io/blog/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C2.png">
-<meta property="og:image" content="http://arhathandong.github.io/blog/2021/03/18/Dip_Lab01/Dip_Lab01_img/3.png">
-<meta property="og:image" content="http://arhathandong.github.io/blog/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C4.png">
-<meta property="og:image" content="http://arhathandong.github.io/blog/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C5.png">
-<meta property="og:image" content="http://arhathandong.github.io/blog/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C6.png">
-<meta property="og:image" content="http://arhathandong.github.io/blog/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C7.png">
-<meta property="og:image" content="http://arhathandong.github.io/blog/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C8.png">
-<meta property="og:image" content="http://arhathandong.github.io/blog/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C9.png">
-<meta property="og:image" content="http://arhathandong.github.io/blog/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C10.png">
-<meta property="og:image" content="http://arhathandong.github.io/blog/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C11.png">
-<meta property="og:image" content="http://arhathandong.github.io/blog/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C12.png">
-<meta property="og:image" content="http://arhathandong.github.io/blog/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C13.png">
-<meta property="og:image" content="http://arhathandong.github.io/blog/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C14.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C1.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C2.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img/3.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C4.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C5.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C6.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C7.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C8.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C9.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C10.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C11.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C12.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C13.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C14.png">
 <meta property="article:published_time" content="2021-03-18T03:18:48.786Z">
 <meta property="article:modified_time" content="2021-09-06T03:28:18.546Z">
 <meta property="article:author" content="pass by">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://arhathandong.github.io/blog/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C1.png">
+<meta name="twitter:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C1.png">
   
-    <link rel="alternate" href="/blog/atom.xml" title="pass by的编程时光" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="pass by的编程时光" type="application/atom+xml">
   
   
     <link rel="icon" href="/images/default-avatar.jpg">
@@ -46,10 +46,10 @@
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
   
-<link rel="stylesheet" href="/blog/css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 
   
-<link rel="stylesheet" href="/blog/css/highlight.css">
+<link rel="stylesheet" href="/css/highlight.css">
 
 <meta name="generator" content="Hexo 5.4.0"></head>
 
@@ -64,11 +64,11 @@
   <div class="head-box global-width">
     <nav class="nav-box nav-right">
       
-        <a class="nav-item" href="/blog/" title
+        <a class="nav-item" href="/" title
         
         >首页</a>
       
-        <a class="nav-item" href="/blog/archives" title
+        <a class="nav-item" href="/archives" title
         
         >归档</a>
       
@@ -89,7 +89,7 @@
     </header>
   
   <div class="article-meta">
-    <a href="/blog/2021/03/18/Dip_Lab01/" class="article-date">
+    <a href="/2021/03/18/Dip_Lab01/" class="article-date">
   <time datetime="2021-03-18T03:18:48.786Z" itemprop="datePublished">2021-03-18</time>
 </a>
     
@@ -146,7 +146,7 @@
   </div>
   <div class="article-nav-block">
     
-      <a href="/blog/2021/03/09/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <a href="/2021/03/09/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
         <div class="article-nav-title">Hello World</div>
         <strong class="article-nav-caption"></strong>
       </a>
@@ -205,7 +205,7 @@ gitment.render('gitmentContainer')
   <div class="widget-box">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">三月 2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
     </div>
   </div>
 
@@ -217,11 +217,11 @@ gitment.render('gitmentContainer')
       <ul>
         
           <li>
-            <a href="/blog/2021/03/18/Dip_Lab01/">图像的基本操作</a>
+            <a href="/2021/03/18/Dip_Lab01/">图像的基本操作</a>
           </li>
         
           <li>
-            <a href="/blog/2021/03/09/hello-world/">Hello World</a>
+            <a href="/2021/03/09/hello-world/">Hello World</a>
           </li>
         
       </ul>
@@ -259,15 +259,15 @@ document.body.write(script);
 </script>
 
   
-<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
   
-<script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
 
 
-<script src="/blog/js/script.js"></script>
+<script src="/js/script.js"></script>
 
 
 
@@ -276,9 +276,9 @@ document.body.write(script);
     <nav id="mobile-nav" class="mobile-nav-box">
   <div class="mobile-nav-img mobile-nav-top"></div>
   
-    <a href="/blog/" class="mobile-nav-link">首页</a>
+    <a href="/" class="mobile-nav-link">首页</a>
   
-    <a href="/blog/archives" class="mobile-nav-link">归档</a>
+    <a href="/archives" class="mobile-nav-link">归档</a>
   
   <div class="mobile-nav-img  mobile-nav-bottom"></div>
 </nav>    
