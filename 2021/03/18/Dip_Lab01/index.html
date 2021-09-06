@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C1.png">
 <meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C2.png">
-<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C3.png">
+<meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img/3.png">
 <meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C4.png">
 <meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C5.png">
 <meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C6.png">
@@ -32,7 +32,7 @@
 <meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C13.png">
 <meta property="og:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C14.png">
 <meta property="article:published_time" content="2021-03-18T03:18:48.786Z">
-<meta property="article:modified_time" content="2021-09-06T03:13:18.630Z">
+<meta property="article:modified_time" content="2021-09-06T03:28:18.546Z">
 <meta property="article:author" content="pass by">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://arhathandong.github.io/2021/03/18/Dip_Lab01/Dip_Lab01_img%5C1.png">
@@ -119,7 +119,7 @@
 <p>边界处理：<br/><br>当然这里在算srcX、srcY时，由于取离该点最近的像素点时用的是round()函数，可能会使得srcX或者srcY变为0或者-1或者超出最长度而越界，所以这里要对这种边界进行判断处理。对于srcX或者srcY变为0或者超出最长度的情况来说，即让srcX和srcY至少为1。对于srcX或者srcY变为-1的情况来说，让原图的灰度矩阵在缩小、放大操作以前，在其外围向外扩展一个像素。<br/></p>
 <p><br/><br/></p>
 <p>四、用双线性插值算法实现图像的放大和缩小<br/></p>
-<p>实验原理：<br/><br>双线性插值法和前面的最邻近插值法大体类似，区别在于当最邻近插值法找到对应的原图像坐标点时，会根据坐标取最近的像素的灰度值，而双线性插值法则会根据其离周围4个像素点的距离来加权计算得到新的灰度值，所以这里就不再赘述双线性插值法和最邻近插值法相同的部分，而是描述新像素的灰度值加权计算公式。例如下图情况：<br><img src="Dip_Lab01_img%5C3.png"><br>其中，点坐标为：Q11 = (x1, y1)、Q12 = (x1, y2)、Q21 = (x2, y1) 、Q22 = (x2, y2)<br>首先根据坐标在X方向上进行一次插值，计算出R1、R2点的值，得到：<br><img src="Dip_Lab01_img%5C4.png"><br>然后再在Y方向上进行一次插值，计算P点的值，得到：<br><img src="Dip_Lab01_img%5C5.png"><br>整理可得：<br><img src="Dip_Lab01_img%5C6.png"><br>由于双线性插值每次使用的都是相邻的四个像素点，所以，(x2-x1)(y2-y1)=1恒成立，化简可得：<br><img src="Dip_Lab01_img%5C7.png"><br>由于P点坐标会出现小数的情况，因此可以分别用u和v分别表示其横纵坐标的小数部分，用i和j分别表示其横纵坐标的整数部分因此上式可化为：<br><img src="Dip_Lab01_img%5C8.png"><br>因此，只需要对新图像中的每个每个像素点找到其对应原图像素点的对应关系，再运用上式即可得到缩小或放大的图像。最后使用figure()、suplot()、imshow()进行输出展示，使用title()函数给图像加上标题。<br/></p>
+<p>实验原理：<br/><br>双线性插值法和前面的最邻近插值法大体类似，区别在于当最邻近插值法找到对应的原图像坐标点时，会根据坐标取最近的像素的灰度值，而双线性插值法则会根据其离周围4个像素点的距离来加权计算得到新的灰度值，所以这里就不再赘述双线性插值法和最邻近插值法相同的部分，而是描述新像素的灰度值加权计算公式。例如下图情况：<br><img src="Dip_Lab01_img/3.png"><br>其中，点坐标为：Q11 = (x1, y1)、Q12 = (x1, y2)、Q21 = (x2, y1) 、Q22 = (x2, y2)<br>首先根据坐标在X方向上进行一次插值，计算出R1、R2点的值，得到：<br><img src="Dip_Lab01_img%5C4.png"><br>然后再在Y方向上进行一次插值，计算P点的值，得到：<br><img src="Dip_Lab01_img%5C5.png"><br>整理可得：<br><img src="Dip_Lab01_img%5C6.png"><br>由于双线性插值每次使用的都是相邻的四个像素点，所以，(x2-x1)(y2-y1)=1恒成立，化简可得：<br><img src="Dip_Lab01_img%5C7.png"><br>由于P点坐标会出现小数的情况，因此可以分别用u和v分别表示其横纵坐标的小数部分，用i和j分别表示其横纵坐标的整数部分因此上式可化为：<br><img src="Dip_Lab01_img%5C8.png"><br>因此，只需要对新图像中的每个每个像素点找到其对应原图像素点的对应关系，再运用上式即可得到缩小或放大的图像。最后使用figure()、suplot()、imshow()进行输出展示，使用title()函数给图像加上标题。<br/></p>
 <p>边界处理：<br/><br>与最邻近插值一样<br/></p>
 <p><br/><br/></p>
 <p>五、用双三次插值算法实现图像的放大和缩小<br/></p>
